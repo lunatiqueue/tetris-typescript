@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(90deg, slategrey, darkslategrey);
+    height: 100vh;
+    background-color: slategrey;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+  }
+  
+  .tetris {
+    background-color: rgb(26, 23, 68);
+    padding: 0.5vh;
+    border-top-right-radius: 0.5vh;
+    border-top-left-radius: 0.5vh;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: repeat(20, auto);
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.579),
+      inset -4px 0px 8px rgba(0, 0, 0, 0.451), 6px 6px 20px rgba(0, 0, 0, 0.535);
+  }
+  
+  .tetris div {
+    height: min(4vh, 7vw);
+    width: min(4vh, 7vw);
+    background-color: rgba(56, 128, 131, 0.186);
+    border-radius: 0.3vh;
+    box-shadow: inset -2px -2px 2px rgba(202, 202, 202, 0.1),
+      inset 4px 4px 4px rgba(0, 0, 0, 0.241);
+  }
+  
+  .tetris .O {
+    background: rgb(215, 77, 109);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(88, 4, 22, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .L {
+    background: rgb(33, 162, 202);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(4, 59, 88, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .J {
+    background: rgb(186, 177, 79);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(88, 63, 4, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .S {
+    background: rgb(50, 92, 244);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(4, 4, 88, 0.532), 12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .Z {
+    background: rgb(215, 116, 77);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(88, 32, 4, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .T {
+    background: rgb(194, 89, 235);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(85, 4, 88, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .I {
+    background: rgb(62, 191, 101);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(4, 88, 43, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .F {
+    background-color: rgb(54, 54, 54);
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(2, 36, 18, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  .tetris .D {
+    background-color: brown;
+    animation-name: changeColor;
+    animation-duration: 0.5s;
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(2, 36, 18, 0.532),
+      12px 12px 24px rgba(0, 0, 0, 0.6);
+  }
+  
+  @keyframes changeColor {
+    0% {
+      background-color: chocolate;
+    }
+  
+    50% {
+      background-color: brown;
+    }
+    100% {
+      background-color: chocolate;
+    }
+  }
+  
+  .control {
+    color: #fff;
+    height: min(6vh, 10vw);
+    width: calc(10 * min(4vh, 7vw));
+    background-color: rgb(26, 23, 68);
+    padding: 0.5vh;
+    border-bottom-left-radius: 0.5vh;
+    border-bottom-right-radius: 0.5vh;
+    box-shadow: inset 1px -1px 3px rgba(255, 255, 255, 0.579),
+      inset -4px -4px 8px rgba(0, 0, 0, 0.451), 6px 6px 20px rgba(0, 0, 0, 0.535);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .label {
+    padding: 0 1vh;
+    text-transform: uppercase;
+    font-size: 1.5vh;
+  }
+  
+  .btn {
+    height: min(4vh, 7vw);
+    width: min(8vh, 11vw);
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0.5vh;
+    border-radius: 0.5vh;
+    border: none;
+    font-weight: 600;
+    font-size: 1.5vh;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1.5px;
+    box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.213),
+      inset -3px -3px 3px rgba(2, 36, 18, 0.532),
+      12px 12px 24px rgba(32, 32, 32, 0.6);
+  }
+  
+  .btn:not([disabled]):hover {
+    cursor: pointer;
+    transform: translate(1px, 1px);
+  }
+  
+  button.btn:disabled {
+    cursor: not-allowed;
+    background-color: darkgray;
+  }
+  
+  .btn.start {
+    background-color: darkolivegreen;
+    margin-right: 1vh;
+  }
+  
+  .btn.pause {
+    background-color: salmon;
+    margin-left: 0;
+  }
+  
+  .modal {
+    position: fixed; /* Instead of absolute */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999; /* Make sure it's on top */
+    background-color: rgba(78, 71, 39, 0.6);
+    display: none;
+}
+
+.modal.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.sticker {
+  width: 20vw;
+  height: 25vh;
+  background-color: rgb(177, 140, 93);
+  position: relative; /* Instead of absolute */
+  z-index: 2;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 0.5vh;
+  padding: 1vh;
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+  .over {
+    padding: 0;
+  }
+  
+  #result {
+    font-weight: 800;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .restart {
+    background-color: orangered;
+    height: min(5vh, 9vw);
+    width: min(10vh, 14vw);
+  }
+  
